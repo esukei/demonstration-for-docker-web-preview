@@ -15,12 +15,14 @@
     <section>
       <h1>Demonstration</h1>
       <p>Hi, this is demonstration HOME.</p>
+      <h2>Tables in my DB.</h2>
       <p>
         <?php
           $pdo = new PDO('mysql:host=db;dbname=mydata;charset=utf8mb4', 'myuser', 'password');
           $statement = $pdo->query('SHOW TABLES');
+
           foreach($statement as $row) {
-            var_dump($row);
+              echo $row[0] . '<br>';
           }
         ?>
       </p>

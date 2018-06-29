@@ -14,7 +14,11 @@ services:
       MYSQL_DATABASE: "mydata"
       MYSQL_USER: "myuser"
       MYSQL_PASSWORD: "password"
+    volumes:
+      - mysqldata:/var/lib/mysql
   adminer:
     image: adminer
     ports:
       - "4000:8080"
+volumes:
+  mysqldata:
